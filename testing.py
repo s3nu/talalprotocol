@@ -1,4 +1,4 @@
 from talalprotocol import *
 
 
-x = caesar_cipher() 
+x = caesar_cipher()
