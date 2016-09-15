@@ -5,4 +5,4 @@ History
 0.1.0 (2016-09-14)
 ------------------
 
-* First release code name: Laila
+* First release code name: Apollo
