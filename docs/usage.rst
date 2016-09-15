@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use talalprotocol in a project::
+To use TalalProtocol in a project::
 
     import talalprotocol

@@ -4,13 +4,14 @@
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 9/12/2016
+# Latest mod: 9/15/2016
+# Notes: 
+# a. major rewrite (more efficient) to vigenere 
+# b. Add RSA 
 # -----------------------------------------------------------------------------
 
 '''
 This module provides the following encryption functions:
-
-|---- More documenation needed -----|
 
 1. Vigenere Cipher 
     function calls: vigenere_cipher() or vigenere_decipher() 
@@ -18,10 +19,8 @@ This module provides the following encryption functions:
 2. Caesar Cipher  
     function calls: caesar_cipher() and caesar_decipher()
 
-3. 
-
-
 '''
+
 import string
 import re
 
@@ -31,6 +30,11 @@ english_alphabets = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
 def caesar_cipher():
     '''
     This function ciphers any submitted message using Caesar Cipher
+
+    Encryption mathematical representation:
+    caesar_cipher(x) = (x + n) mod 26 
+    x: letter index     n: shift value 
+
 
     Parameters:
     N/A (the user will be prompted)
@@ -44,6 +48,7 @@ def caesar_cipher():
     for character in original_text:
         if character.isdigit():
             ciphered_text.append(character)
+
         elif character in english_alphabets:
             ciphered_text.append(english_alphabets[
                 (english_alphabets.index(character) + shift_value) % 26])
@@ -54,10 +59,20 @@ def caesar_decipher():
     '''
     This function deciphers any Caesar-encrpyted message 
     '''
+    ciphered_text = input('What is the message you desire to decrypt: ')
+    ciphered_text = ciphered_text.lower()
+    key_word = input('Enter the encryption key: ')
+    key_word = key_word.lower()
+
+
 
 def vigenere_cipher():
     '''
     This function ciphers any submitted message using Vigenere Cipher
+
+    Encryption mathematical representation:
+    vigenere_cipher(y) = (y + k) mod 26
+    y: letter index   k: corresponding key letter index  
 
     Parameters:
     N/A (the user will be prompted)

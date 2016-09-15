@@ -2,13 +2,14 @@
 Credits
 =======
 
-Development Team
+Development Lead
 ----------------
 
-* Anahit Sarao <indianvip60@gmail.com>
-* Talal Khalil <---->
+* Team Standy <teamstandyy@gmail.com>
 
 Contributors
 ------------
+* Talal Khalil <---->
+* Anahit Sarao <indianvip60@gmail.com>
 
-*
+

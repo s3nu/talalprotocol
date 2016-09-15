@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from distutils.core import setup
+
+from setuptools import setup
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -9,38 +10,42 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    #TODO: put package requirements here
-    'setuptools==25.2.0',
-    'wheel==0.29.0',
-    'pip==8.1.2',
+    # TODO: put package requirements here
 ]
 
+test_requirements = [
+    # TODO: put package test requirements here
+]
 
 setup(
     name='talalprotocol',
     version='0.1.0',
-    packages=['talalprotocol'],
-    url='https://github.com/s3nu/talalprotocol',
+    description="Deep Layered Encryption",
     long_description=readme + '\n\n' + history,
-    license='TeamStandy License',
-    author='Team ThugThug',
-    author_email='talalkhalil206@gmail.com',
-    description='Deep Layered Encryption',
+    author="Team Standy",
+    author_email='teamstandyy@gmail.com',
+    url='https://github.com/s3nu/talalprotocol',
+    packages=[
+        'talalprotocol',
+    ],
     package_dir={'talalprotocol':
-                     'talalprotocol'},
+                 'talalprotocol'},
+    include_package_data=True,
+    install_requires=requirements,
+    zip_safe=False,
     keywords='talalprotocol',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Internal Testing',
+        'Intended Audience :: Developers',
         'Natural Language :: English',
-        'License:: Licensed Material - Property of Team Standy. Proprietary License',
-        'Python Package :: Encryption Package for Robust Security Use'
-        'Operating System :: MacOS',
-        "Programming Language :: Python :: 2.7 :: Testing in Progress",
-        'Programming Language :: Python :: 2.6 :: Testing In Progress',
-        'Programming Language :: Python :: 3   :: Works',
-        'Programming Language :: Python :: 3.3 :: Works',
-        'Programming Language :: Python :: 3.4 :: Works',
-        'Programming Language :: Python :: 3.5 :: Works',
+        "Programming Language :: Python :: 2",
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3+ :: Works',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
     ],
+    test_suite='tests',
+    tests_require=test_requirements
 )

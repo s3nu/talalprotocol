@@ -5,12 +5,14 @@ TalalProtocol
 TeamStandy_.
     .. _TeamStandy: www.teamstandy.com
 
-.. figure:: docs/staticfiles/readmeIMG.jpg
+.. image:: https://pyup.io/repos/github/s3nu/talalprotocol/shield.svg
+     :target: https://pyup.io/repos/github/s3nu/talalprotocol/
+     :alt: Updates
+
 
 Deep Layered Encryption
 
-
-
+.. figure:: docs/images/readme.jpg
 
 Features
 --------
@@ -19,6 +21,7 @@ Features
 
 Credits
 ---------
+
 Package Writers:
     - Talal Khalil (Admin: ThugThug)
     - Anahit Sarao (Lead Dev: Slumpy)
@@ -27,3 +30,7 @@ Team Standy members based in California:
     .. [#] FreshFresh
     .. [#] ChinkFromRich
     .. [#] DipDip
+
+===============================
+TalalProtocol
+===============================
