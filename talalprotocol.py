@@ -42,7 +42,7 @@ def caesar_cipher():
     shift_value = int(input('Choose the shifting value (a number from 1 - 26): '))
     ciphered_text = []
     for character in original_text:
-        if character isdigit():
+        if character.isdigit():
             ciphered_text.append(character)
         elif character in english_alphabets:
             ciphered_text.append(english_alphabets[
