@@ -4,13 +4,14 @@
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 9/12/2016
+# Latest mod: 9/15/2016
+# Notes: 
+# a. major rewrite (more efficient) to vigenere 
+# b. Add RSA 
 # -----------------------------------------------------------------------------
 
 '''
 This module provides the following encryption functions:
-
-|---- More documenation needed -----|
 
 1. Vigenere Cipher 
     function calls: vigenere_cipher() or vigenere_decipher() 
@@ -19,6 +20,7 @@ This module provides the following encryption functions:
     function calls: caesar_cipher() and caesar_decipher()
 
 '''
+
 import string
 import re
 
@@ -57,7 +59,11 @@ def caesar_decipher():
     '''
     This function deciphers any Caesar-encrpyted message 
     '''
-    ciphered_text = 
+    ciphered_text = input('What is the message you desire to decrypt: ')
+    ciphered_text = ciphered_text.lower()
+    key_word = input('Enter the encryption key: ')
+    key_word = key_word.lower()
+
 
 
 def vigenere_cipher():
@@ -66,7 +72,7 @@ def vigenere_cipher():
 
     Encryption mathematical representation:
     vigenere_cipher(y) = (y + k) mod 26
-    y: letter index   k: key index  
+    y: letter index   k: corresponding key letter index  
 
     Parameters:
     N/A (the user will be prompted)
