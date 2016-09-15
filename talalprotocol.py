@@ -18,9 +18,6 @@ This module provides the following encryption functions:
 2. Caesar Cipher  
     function calls: caesar_cipher() and caesar_decipher()
 
-3. 
-
-
 '''
 import string
 import re
@@ -32,6 +29,11 @@ def caesar_cipher():
     '''
     This function ciphers any submitted message using Caesar Cipher
 
+    Encryption mathematical representation:
+    caesar_cipher(x) = (x + n) mod 26 
+    x: letter index     n: shift value 
+
+
     Parameters:
     N/A (the user will be prompted)
     Returns:
@@ -42,8 +44,9 @@ def caesar_cipher():
     shift_value = int(input('Choose the shifting value (a number from 1 - 26): '))
     ciphered_text = []
     for character in original_text:
-        if character isdigit():
+        if character.isdigit():
             ciphered_text.append(character)
+
         elif character in english_alphabets:
             ciphered_text.append(english_alphabets[
                 (english_alphabets.index(character) + shift_value) % 26])
@@ -54,10 +57,16 @@ def caesar_decipher():
     '''
     This function deciphers any Caesar-encrpyted message 
     '''
+    ciphered_text = 
+
 
 def vigenere_cipher():
     '''
     This function ciphers any submitted message using Vigenere Cipher
+
+    Encryption mathematical representation:
+    vigenere_cipher(y) = (y + k) mod 26
+    y: letter index   k: key index  
 
     Parameters:
     N/A (the user will be prompted)
