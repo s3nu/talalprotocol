@@ -3,8 +3,12 @@ Major rewrite of vigenere cipher
 
 Goal:
 more efficient implementation using modular arithmetic
-'''
 
+Required mods:
+a. fix the key key spanning over the message
+b. deal with the empty spaces
+
+'''
 
 
 def vigenere_cipher():
