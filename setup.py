@@ -5,7 +5,7 @@ from distutils.core import setup
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('history.rst') as history_file:
+with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
@@ -21,7 +21,8 @@ setup(
     version='0.1.0',
     packages=['talalprotocol'],
     url='https://github.com/s3nu/talalprotocol',
-    license='',
+    long_description=readme + '\n\n' + history,
+    license='TeamStandy License',
     author='Team ThugThug',
     author_email='talalkhalil206@gmail.com',
     description='Deep Layered Encryption',
