@@ -5,7 +5,7 @@ TalalProtocol
 TeamStandy_.
     .. _TeamStandy: www.teamstandy.com
 
-.. figure:: staticfiles/download.png
+.. figure:: staticfiles/readmeIMG.jpg
 
 Deep Layered Encryption
 
