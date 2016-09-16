@@ -27,7 +27,7 @@ setup(
     author="Team Standy",
     author_email='teamstandyy@gmail.com',
     url='https://github.com/s3nu/talalprotocol',
-    license='Team Standy Licence',
+    license='Team Standy License',
     packages=[
         'talalprotocol',
     ],

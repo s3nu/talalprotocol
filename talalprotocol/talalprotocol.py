@@ -1,23 +1,33 @@
 # -----------------------------------------------------------------------------
-# Name: talalprotocol 
+# Name: talalprotocol
 # Purpose: provide various encryption functions
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 9/15/2016
-# Notes: 
-# a. major rewrite (more efficient) to vigenere 
-# b. Add RSA 
+# Latest mod: 9/16/2016
+#
+# Improvements:
+# a. non interactive version for direct (add parameters)
+# b. extensive debugging required
+#
+# Notes:
+# a. string punctuation needs to be handled
+# b. major rewrite for vigenere needed
+# c. Add RSA and SHA 256
 # -----------------------------------------------------------------------------
 
 '''
 This module provides the following encryption functions:
 
-1. Vigenere Cipher 
-    function calls: vigenere_cipher() or vigenere_decipher() 
+A. Interactive Version
 
-2. Caesar Cipher  
+1. Vigenere Cipher
+    function calls: vigenere_cipher() or vigenere_decipher()
+
+2. Caesar Cipher
     function calls: caesar_cipher() and caesar_decipher()
+
+3. RSA (to be added)
 
 '''
 
@@ -32,8 +42,8 @@ def caesar_cipher():
     This function ciphers any submitted message using Caesar Cipher
 
     Encryption mathematical representation:
-    caesar_cipher(x) = (x + n) mod 26 
-    x: letter index     n: shift value 
+    caesar_cipher(x) = (x + n) mod 26
+    x: letter index     n: shift value
 
 
     Parameters:
@@ -46,7 +56,7 @@ def caesar_cipher():
     shift_value = int(input('Choose the shifting value (a number from 1 - 26): '))
     ciphered_text = []
     for character in original_text:
-        if character.isdigit():
+        if character.isdigit() or character.punctuation:
             ciphered_text.append(character)
 
         elif character in english_alphabets:
@@ -57,13 +67,25 @@ def caesar_cipher():
 
 def caesar_decipher():
     '''
-    This function deciphers any Caesar-encrpyted message 
+    This function deciphers any Caesar-encrpyted message
+
+
     '''
+
     ciphered_text = input('What is the message you desire to decrypt: ')
     ciphered_text = ciphered_text.lower()
-    key_word = input('Enter the encryption key: ')
-    key_word = key_word.lower()
+    shift_value = int(input('Enter the shifting value utilized (a number from 1 - 26): '))
 
+    deciphered_text = []
+
+    for char in ciphered_text:
+        if char.isdigit():
+            deciphered_text.append(char)
+
+        elif char in english_alphabets:
+            deciphered_text.append(english_alphabets[(english_alphabets.index(char) - shift_value) % 26])
+
+    print(''.join(deciphered_text))
 
 
 def vigenere_cipher():
@@ -72,7 +94,7 @@ def vigenere_cipher():
 
     Encryption mathematical representation:
     vigenere_cipher(y) = (y + k) mod 26
-    y: letter index   k: corresponding key letter index  
+    y: letter index   k: corresponding key letter index
 
     Parameters:
     N/A (the user will be prompted)
@@ -86,7 +108,7 @@ def vigenere_cipher():
 
     key_word = input('Enter desired key word for encryption: ')
     key_word = key_word.lower()
-    
+
     key_list = []
     while key_length < len(original_text):
         for letter in key_word:
@@ -121,7 +143,7 @@ def vigenere_decipher():
     Returns:
     deciphered message
     '''
-    
+
     original_text = input('Enter the text you want to decipher: ')
     key_word = input('Enter the shared key word: ')
 
