@@ -12,7 +12,7 @@
 #
 # Notes:
 # a. string punctuation needs to be handled
-# b. ** major rewrite (more efficient) to vigenere **
+# b. major rewrite for vigenere needed
 # c. Add RSA and SHA 256
 # -----------------------------------------------------------------------------
 
