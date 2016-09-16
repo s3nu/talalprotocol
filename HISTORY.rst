@@ -6,3 +6,8 @@ History
 ------------------
 
 * First release code name: Apollo
+
+0.1.2 (2016-09-15)
+------------------
+
+* Patches and Bug fixes
