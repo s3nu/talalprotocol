@@ -7,16 +7,12 @@ This is just a test file used for
 '''
 
 x = caesar_cipher()
-print(x)
 
 y = caesar_decipher()
-print(y)
 
-z = vigenere_cipher()
-print(z)
-
-a = vigenere_decipher()
-print(a)
+# z = vigenere_cipher()
+#
+# a = vigenere_decipher()
 
 
 
