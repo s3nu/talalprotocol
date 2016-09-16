@@ -11,6 +11,8 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     # TODO: put package requirements here
+    'wheel==0.29',
+    'pip==8.1.2',
 ]
 
 test_requirements = [
@@ -32,7 +34,7 @@ setup(
     package_dir={'talalprotocol':
                  'talalprotocol'},
     include_package_data=True,
-    #install_requires=requirements,
+    install_requires=requirements,
     zip_safe=False,
     keywords='encryption talalprotocol python3',
     classifiers=[
