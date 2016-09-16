@@ -25,11 +25,7 @@ Credits
 Package Writers:
     - Talal Khalil (Admin: ThugThug)
     - Anahit Sarao (Lead Dev: Slumpy)
-Team Standy members based in California:
-    .. [#] RowRow
-    .. [#] FreshFresh
-    .. [#] ChinkFromRich
-    .. [#] DipDip
+
 
 ===============================
 TalalProtocol
