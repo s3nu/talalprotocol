@@ -16,8 +16,6 @@ import unittest
 #from talalprotocol import *
 
 
-#x = caesar_cipher()
-
 class TestTalalprotocol(unittest.TestCase):
 
     def setUp(self):
