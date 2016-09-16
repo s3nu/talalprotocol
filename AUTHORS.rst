@@ -9,7 +9,7 @@ Development Lead
 
 Contributors
 ------------
-* Talal Khalil <---->
+* Talal Khalil <talalkhalil206@gmail.com>
 * Anahit Sarao <indianvip60@gmail.com>
 
 
