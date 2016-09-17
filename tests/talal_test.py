@@ -6,13 +6,12 @@ This is just a test file used for
 2. debugging
 '''
 
-x = caesar_cipher()
 
-y = caesar_decipher()
+original_message = 'Nadim is .... a faggot bitch ####!'
+shift_val = 1
+x = str(caesar_cipher(original_message,shift_val))
+print('The original message is: ' + original_message)
+print('The encrypted text is: ' + x)
 
-# z = vigenere_cipher()
-#
-# a = vigenere_decipher()
-
-
-
+y = caesar_decipher(x, 1)
+print('The decrypted message is: ' + y)
