@@ -4,15 +4,11 @@
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 9/16/2016
-#
-# Improvements:
-# a. non interactive version for direct (add parameters)
-# b. extensive debugging required
+# Latest mod: 9/17/2016
 #
 # Notes:
-# a. string punctuation needs to be handled
-# b. major rewrite for vigenere needed
+# a. vigenere needs improvement
+# b. rigorous testing needed
 # c. Add RSA and SHA 256
 # -----------------------------------------------------------------------------
 
@@ -21,7 +17,7 @@ This module provides the following encryption functions:
 
 
 1. Vigenere Cipher
-    function calls: vigenere_cipher() or vigenere_decipher()
+    needs modification: pass in parameters
 
 2. Caesar Cipher
     function calls:
@@ -35,9 +31,9 @@ This module provides the following encryption functions:
 import string
 import re
 
-english_alphabets = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-                         'n','o','p','q','r','s','t','u','v','w','x','y','z']
 
+x = string.ascii_lowercase
+english_alphabets = list(x)
 
 
 def caesar_cipher(message, shift_value):
@@ -48,7 +44,6 @@ def caesar_cipher(message, shift_value):
         caesar_cipher(x) = (x + n) mod 26
         x: letter index     n: shift value
 
-
         Parameters:
         message
         shift value
@@ -56,13 +51,29 @@ def caesar_cipher(message, shift_value):
         Returns:
         ciphered text
         '''
+
+    # handles floats
+    shift_value = int(shift_value)
+
+    # handles negative shift values
+    check = True
+    while check:
+        if shift_value < 0:
+            print('Shift values should be positive. Try again.')
+            quit()
+        else:
+            check = False
+
     message = message.lower()
     ciphered_text = []
+
+    string_punctuation = string.punctuation
 
     for char in message:
         if char.isdigit():
             ciphered_text.append(char)
-
+        elif char in string_punctuation:
+            ciphered_text.append(char)
         elif char in english_alphabets:
             ciphered_text.append(english_alphabets[(english_alphabets.index(
                 char) + shift_value) % 26])
@@ -77,7 +88,6 @@ def caesar_decipher(message, shift_value):
         caesar_cipher(x) = (x - n) mod 26
         x: letter index     n: shift value
 
-
         Parameters:
         message
         shift value
@@ -86,10 +96,26 @@ def caesar_decipher(message, shift_value):
         ciphered text
 
     '''
+
+    shift_value = int(shift_value)
+
+    check = True
+    while check:
+        if shift_value < 0:
+            print('Shift values should be positive. Try again.')
+            quit()
+        else:
+            check = False
+
     message = message.lower()
     ciphered_text = []
+    string_punctuation = string.punctuation
+
     for char in message:
         if char.isdigit():
+            ciphered_text.append(char)
+
+        elif char in string_punctuation:
             ciphered_text.append(char)
 
         elif char in english_alphabets:
@@ -115,7 +141,6 @@ def vigenere_cipher():
     original_text = input('Enter the text you desire to encrypt:')
     original_text = original_text.lower()
     original_text = re.sub(r"\s+","", original_text)
-    #print(original_text)
 
     key_word = input('Enter desired key word for encryption: ')
     key_word = key_word.lower()
@@ -166,7 +191,6 @@ def vigenere_decipher():
             if key_length < len(original_text):
                 key_list.append(letter)
                 key_length+=1
-    print(key_list)
 
     decrypted_text_list = []
     index_value = 0
