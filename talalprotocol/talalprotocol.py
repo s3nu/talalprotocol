@@ -6,14 +6,9 @@
 # Start Date: 8/01/2016
 # Latest mod: 9/16/2016
 #
-# Improvements:
-# a. non interactive version for direct (add parameters)
-# b. extensive debugging required
-#
 # Notes:
-# a. string punctuation needs to be handled
-# b. major rewrite for vigenere needed
-# c. Add RSA and SHA 256
+# a. major rewrite for vigenere needed
+# b. Add RSA and SHA 256
 # -----------------------------------------------------------------------------
 
 '''
@@ -48,7 +43,6 @@ def caesar_cipher(message, shift_value):
         caesar_cipher(x) = (x + n) mod 26
         x: letter index     n: shift value
 
-
         Parameters:
         message
         shift value
@@ -59,10 +53,13 @@ def caesar_cipher(message, shift_value):
     message = message.lower()
     ciphered_text = []
 
+    string_punctuation = string.punctuation
+
     for char in message:
         if char.isdigit():
             ciphered_text.append(char)
-
+        elif char in string_punctuation:
+            ciphered_text.append(char)
         elif char in english_alphabets:
             ciphered_text.append(english_alphabets[(english_alphabets.index(
                 char) + shift_value) % 26])
@@ -77,7 +74,6 @@ def caesar_decipher(message, shift_value):
         caesar_cipher(x) = (x - n) mod 26
         x: letter index     n: shift value
 
-
         Parameters:
         message
         shift value
@@ -88,8 +84,13 @@ def caesar_decipher(message, shift_value):
     '''
     message = message.lower()
     ciphered_text = []
+    string_punctuation = string.punctuation
+
     for char in message:
         if char.isdigit():
+            ciphered_text.append(char)
+
+        elif char in string_punctuation:
             ciphered_text.append(char)
 
         elif char in english_alphabets:
@@ -166,7 +167,7 @@ def vigenere_decipher():
             if key_length < len(original_text):
                 key_list.append(letter)
                 key_length+=1
-    print(key_list)
+    #print(key_list)
 
     decrypted_text_list = []
     index_value = 0
