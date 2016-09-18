@@ -1,10 +1,11 @@
 '''
-This file is for optimized versions of the ciphers
+This file is for new or optimized versions of the ciphers
 
-New ciphers mods:
+Binary cipher mods:
+handle punctuation and digit inputs
+fix output
 
-punctuation input
-digit input
+Note: Binary cipher might be faster if we implement a binary search
 '''
 
 
@@ -15,7 +16,7 @@ english_alphabets = list(string.ascii_lowercase)
 
 def linear_search(item,list):
     '''
-    This function is an implementation of a linear search algorithm
+    This function is used to find the index of the passed item
 
     Parameters:
     item, list
@@ -33,6 +34,13 @@ def linear_search(item,list):
         else:
             position += 1
     return index
+
+def converting_to_binary(item1):
+    return (bin(item1))
+
+
+
+
 
 
 def binary_encryption(message):
@@ -60,11 +68,17 @@ def binary_encryption(message):
         index_list.append(index)
     #print(index_list)
 
+    # each item in our list must be converted to its binary equivalent
+    binary_cipher = []
+    for item in index_list:
+        x = converting_to_binary(item)
+        binary_cipher.append(x)
+
+    print(''.join(binary_cipher))
 
 
 
-
-binary_encryption('Drug dealers ANONYMOUS')
+binary_encryption('abc')
 
 
 
