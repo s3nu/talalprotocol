@@ -22,8 +22,8 @@ Credits
 ---------
 
 Package Writers:
-    - Talal Khalil (Admin: ThugThug)
-    - Anahit Sarao (Lead Dev: Slumpy)
+    - Talal Khalil (Admin)
+    - Anahit Sarao (Lead Dev)
 
 
 ===============================
