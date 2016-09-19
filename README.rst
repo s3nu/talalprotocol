@@ -2,13 +2,12 @@
 TalalProtocol
 ===============================
 
+TalalProtocol.
+    .. _TalalProtocol: www.talalprotocol.com
+
+
 TeamStandy_.
     .. _TeamStandy: www.teamstandy.com
-
-.. image:: https://pyup.io/repos/github/s3nu/talalprotocol/shield.svg
-     :target: https://pyup.io/repos/github/s3nu/talalprotocol/
-     :alt: Updates
-
 
 Deep Layered Encryption
 

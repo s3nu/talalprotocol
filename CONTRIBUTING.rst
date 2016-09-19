@@ -23,24 +23,11 @@ If you are reporting a bug, please include:
 * Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
 
-Fix Bugs
-~~~~~~~~
-
-Look through the GitHub issues for bugs. Anything tagged with "bug"
-and "help wanted" is open to whoever wants to implement it.
-
-Implement Features
-~~~~~~~~~~~~~~~~~~
-
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
-
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
 TalalProtocol could always use more documentation, whether as part of the
-official TalalProtocol docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+official TalalProtocol docs, in docstrings and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
@@ -51,8 +38,7 @@ If you are proposing a feature:
 
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome :)
+* All Contributions are Welcome :)
 
 Get Started!
 ------------
@@ -101,7 +87,7 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 2.6, 2.7, 3.3, 3.4 and 3.5, and for PyPy. Check
+3. The pull request should work for Python 3.3, 3.4 and 3.5, and for PyPy. Check
    https://travis-ci.org/s3nu/talalprotocol/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
@@ -109,6 +95,5 @@ Tips
 ----
 
 To run a subset of tests::
-
 
     $ python -m unittest tests.test_talalprotocol
