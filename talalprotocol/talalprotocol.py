@@ -4,12 +4,12 @@
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 9/17/2016
+# Latest mod: 9/19/2016
 #
 # Notes:
-# a. vigenere needs improvement
+# a. vigenere needs to take in parameters
 # b. rigorous testing needed
-# c. Add RSA and SHA 256
+# c. add binary_encryption algorithm
 # -----------------------------------------------------------------------------
 
 '''
@@ -24,7 +24,7 @@ This module provides the following encryption functions:
      caesar_cipher(message, shift_value)
      caesar_decipher(message, shift_value)
 
-3. RSA (to be added)
+3. Binary Cipher
 
 '''
 
