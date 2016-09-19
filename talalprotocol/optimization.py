@@ -14,7 +14,7 @@ import re
 english_alphabets = list(string.ascii_lowercase)
 
 
-def linear_search(item,list):
+def linear_search(item, list = english_alphabets):
     '''
     This function is used to find the index of the passed item
 
@@ -24,6 +24,7 @@ def linear_search(item,list):
     Returns:
     the index of the item
     '''
+
     found = False
     position = 0
 
@@ -35,10 +36,21 @@ def linear_search(item,list):
             position += 1
     return index
 
+
+
 def converting_to_binary(item1):
-    return (bin(item1))
+
+    digit_list = list(string.digits)
+    string_punctuation = list(string.punctuation)
 
 
+    if item1 in digit_list:
+        item1 = int(item1)
+        binary_value = bin(item1)[2:].zfill(6)
+    else:
+        binary_value = bin(item1)[2:].zfill(6)
+
+    return binary_value
 
 
 
@@ -57,28 +69,41 @@ def binary_encryption(message):
     '''
 
     message = message.lower()
-
     message = re.sub(r"\s+","", message)
     message = list(message)
+    #print(message)
 
     # linear search used to find the char in the alphabets array
+    string_punctuation = list(string.punctuation)
     index_list = []
-    for char in message:
-        index = linear_search(char, message)
-        index_list.append(index)
-    #print(index_list)
+    binary_cipher_list = []
 
-    # each item in our list must be converted to its binary equivalent
-    binary_cipher = []
+    for char in message:
+
+        if char.isdigit():
+            digit_in_binary = converting_to_binary(char)
+            binary_cipher_list.append(digit_in_binary)
+
+        elif char in string_punctuation:
+            binary_cipher_list.append(char)
+
+        else:
+            index = linear_search(char)
+            index_list.append(index)
+
     for item in index_list:
         x = converting_to_binary(item)
-        binary_cipher.append(x)
+        binary_cipher_list.append(x)
 
-    print(''.join(binary_cipher))
+    print(''.join(binary_cipher_list))
 
 
 
-binary_encryption('abc')
+
+message = 'a123'
+# print('Original message: '+ message)
+# print('Encrypted message is: ')
+ciphered_version = binary_encryption(message)
 
 
 
