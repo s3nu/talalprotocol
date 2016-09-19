@@ -2,7 +2,7 @@
 TalalProtocol
 ===============================
 
-TalalProtocol.
+TalalProtocol_.
     .. _TalalProtocol: www.talalprotocol.com
 
 
