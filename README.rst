@@ -2,12 +2,12 @@
 TalalProtocol
 ===============================
 
-TalalProtocol.
-    .. _TalalProtocol: www.talalprotocol.com
+TalalProtocol_.
+    .. _TalalProtocol: http://www.talalprotocol.com
 
 
 TeamStandy_.
-    .. _TeamStandy: www.teamstandy.com
+    .. _TeamStandy: http://www.teamstandy.com
 
 Deep Layered Encryption
 
