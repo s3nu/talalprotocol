@@ -8,10 +8,11 @@ fix output
 Note: Binary cipher might be faster if we implement a binary search
 '''
 
-
+from talalprotocol import *
 import string
 import re
 english_alphabets = list(string.ascii_lowercase)
+string_punctuation = string.punctuation
 
 
 def linear_search(item, list = english_alphabets):
@@ -98,13 +99,22 @@ def binary_encryption(message):
     print(''.join(binary_cipher_list))
 
 
-
-
 message = 'a123'
-# print('Original message: '+ message)
-# print('Encrypted message is: ')
+print('Original message: '+ message)
+print('Encrypted message is: ')
 ciphered_version = binary_encryption(message)
 
+
+
+
+# x = caesar_cipher('Hi I am gay',1)
+# y = caesar_decipher ('ij j bn',1)
+#
+# x = vigenere_cipher('My name is talal','math')
+# print(x)
+#
+# y = vigenere_decipher(x, 'math')
+# print(y)
 
 
 
