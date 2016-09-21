@@ -6,10 +6,6 @@
 # Start Date: 8/01/2016
 # Latest mod: 9/20/2016
 #
-# Notes:
-# a. Vigenere cipher is completely functional.
-# b. Caesar handles spaces, digits, and punctuation.
-# c. Add binary_encryption algorithm after testing functionality.
 # -----------------------------------------------------------------------------
 
 '''
@@ -17,14 +13,18 @@ This module provides the following encryption functions:
 
 
 1. Vigenere Cipher
-    needs modification: pass in parameters
+    function calls:
+        a. vigenere_cipher(message, key)
+        b. vigenere_decipher(message, key)
 
 2. Caesar Cipher
     function calls:
-     caesar_cipher(message, shift_value)
-     caesar_decipher(message, shift_value)
+        a. caesar_cipher(message, shift_value)
+        b. caesar_decipher(message, shift_value)
 
-3. Binary Cipher
+3. Binary Encryption algorithm (custom)
+    function call:
+        a. binary_encryption(message)
 
 '''
 
@@ -78,7 +78,7 @@ def caesar_cipher(message, shift_value):
         else:
             ciphered_text = ciphered_text + ' '
 
-    print(ciphered_text)
+    #print(ciphered_text)
     return ciphered_text
 
 
@@ -128,7 +128,7 @@ def caesar_decipher(message, shift_value):
         else:
             ciphered_text = ciphered_text + ' '
 
-    print(ciphered_text)
+    #print(ciphered_text)
     return ciphered_text
 
 
@@ -141,7 +141,9 @@ def vigenere_cipher(message,key):
     y: letter index   k: corresponding key letter index
 
     Parameters:
-    N/A (the user will be prompted)
+    message
+    key
+
     Returns:
     ciphered text
     '''
@@ -186,8 +188,10 @@ def vigenere_decipher(message, key):
     '''
     This function deciphers any vigenere_ciphered message
 
-    Parameter:
-    N/A (the user will be prompted)
+    Parameters:
+    message
+    key
+
     Returns:
     deciphered message
     '''
@@ -243,15 +247,13 @@ def converting_to_binary(item1):
 
 def binary_encryption(message):
     '''
-    This encryption algorithm takes the message, acquires its index in the
-    alphabets, and finally converts the index to its binary equivalent.
-    maximum index = 25
-    # of bits required = 6
+    This is a custom encryption algorithm and documentation is still private
 
-    For instance:
-    message = abc
-    index of a = 0, b = 1, c = 1
-    encrypted version 000000 000001 000010
+    Parameter:
+    message
+
+    Returns:
+    encrypted message
     '''
 
     message = message.lower()
