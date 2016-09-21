@@ -12,8 +12,6 @@ History
 
 * Patches and Bug fixes
 
-
-
 0.2.0 (2016-09-20)
 ------------------
 
