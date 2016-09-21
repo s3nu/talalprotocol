@@ -29,7 +29,7 @@ Credits
 ---------
 
 Package Writers:
-    - Talal Khalil (Admin)
+    - Talal Khalil (Creator&Architect)
     - Anahit Sarao (Lead Dev)
 
 
