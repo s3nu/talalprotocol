@@ -33,7 +33,6 @@ x = string.ascii_lowercase
 english_alphabets = list(x)
 string_punctuation = string.punctuation
 
-
 def caesar_cipher(message, shift_value):
     '''
         This function ciphers any submitted message using Caesar Cipher
@@ -223,6 +222,57 @@ def vigenere_decipher(message, key):
             decrypted_message = decrypted_message + ' '
 
     return decrypted_message
+
+
+
+def converting_to_binary(item1):
+
+    digit_list = list(string.digits)
+    string_punctuation = list(string.punctuation)
+
+    if item1 in digit_list:
+        # added 32 = 100000 as a flag bit to indicate that a char is a digit
+        item1 = int(item1) + 32
+        binary_value = bin(item1)[2:].zfill(6)
+    else:
+        binary_value = bin(item1)[2:].zfill(6)
+
+    return binary_value
+
+
+
+def binary_encryption(message):
+    '''
+    This encryption algorithm takes the message, acquires its index in the
+    alphabets, and finally converts the index to its binary equivalent.
+    maximum index = 25
+    # of bits required = 6
+
+    For instance:
+    message = abc
+    index of a = 0, b = 1, c = 1
+    encrypted version 000000 000001 000010
+    '''
+
+    message = message.lower()
+    binary_ciphered_message = ''
+
+    for char in message:
+        if char.isdigit():
+            digit_in_binary = converting_to_binary(char)
+            binary_ciphered_message += digit_in_binary
+
+        elif char in string_punctuation:
+            binary_ciphered_message += char
+
+        elif char in english_alphabets:
+            index = english_alphabets.index(char)
+            x = converting_to_binary(index)
+            binary_ciphered_message += x
+        else:
+            binary_ciphered_message += ' '
+
+    return binary_ciphered_message
 
 
 
