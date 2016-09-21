@@ -40,7 +40,9 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
+        'License:: Licensed Material - Property of Team Standy. Proprietary License',
         'Natural Language :: English',
+        'Operating System :: MacOS',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',

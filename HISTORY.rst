@@ -11,3 +11,18 @@ History
 ------------------
 
 * Patches and Bug fixes
+
+0.2.0 (2016-09-20)
+------------------
+
+* Custom Binary Encryption algorithm added
+
+* Caesar Cipher patched and completely optimized
+
+* Vigenere Cipher patched
+
+* Run time improvement
+
+
+
+
