@@ -4,7 +4,7 @@
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 9/20/2016
+# Latest mod: 9/22/2016
 #
 # -----------------------------------------------------------------------------
 
@@ -23,8 +23,9 @@ This module provides the following encryption functions:
         b. caesar_decipher(message, shift_value)
 
 3. Binary Encryption algorithm (custom)
-    function call:
+    function calls:
         a. binary_encryption(message)
+        b. binary_decryption(encrypted_message)
 
 '''
 
