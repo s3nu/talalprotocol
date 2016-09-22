@@ -15,12 +15,16 @@ english_alphabets = list(string.ascii_lowercase)
 string_punctuation = string.punctuation
 
 
+# passing_val = '0000000 0100000 1000000 0000000 0100000 1000000'
+# x = binary_decryption(passing_val)
+# print(x)
 
 
-# message = '1 a b 2'
-# ciphered_version = print(binary_encryption(message))
-
-
+# print(string_punctuation)
+# message = 'a 1 !'
+# ciphered_version = binary_encryption(message)
+#
+# print(ciphered_version)
 
 
 # x = caesar_cipher('Hi I am gay',1)
