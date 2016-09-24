@@ -11,8 +11,20 @@ Note: Binary cipher might be faster if we implement a binary search
 from talalprotocol import *
 import string
 import re
+import sys
 english_alphabets = list(string.ascii_lowercase)
 string_punctuation = string.punctuation
+
+
+
+
+my_test = CaesarCipher(3)
+
+x = my_test.encryption('I am Talal')
+print(x)
+
+y = my_test.decryption(x)
+print(y)
 
 
 # passing_val = '0000000 0100000 1000000 0000000 0100000 1000000'
