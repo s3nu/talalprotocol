@@ -34,103 +34,73 @@ x = string.ascii_lowercase
 english_alphabets = list(x)
 string_punctuation = string.punctuation
 
-def caesar_cipher(message, shift_value):
+class CaesarCipher(object):
     '''
-        This function ciphers any submitted message using Caesar Cipher
-
-        Encryption mathematical representation:
-        caesar_cipher(x) = (x + n) mod 26
-        x: letter index     n: shift value
-
-        Parameters:
-        message
-        shift value
-
-        Returns:
-        ciphered text
-        '''
-
-    # handles floats
-    shift_value = int(shift_value)
-
-    # handles negative shift values
-    check = True
-    while check:
-        if shift_value < 0:
-            print('Shift values should be positive. Try again.')
-            quit()
-        else:
-            check = False
-
-    message = message.lower()
-    ciphered_text = ''
-
-    #string_punctuation = string.punctuation
-
-    for char in message:
-        if char.isdigit():
-            ciphered_text = ciphered_text + char
-        elif char in string_punctuation:
-            ciphered_text = ciphered_text + char
-        elif char in english_alphabets:
-            ciphered_text = ciphered_text + (
-            english_alphabets[(english_alphabets.index(
-                char) + shift_value) % 26])
-        else:
-            ciphered_text = ciphered_text + ' '
-
-    #print(ciphered_text)
-    return ciphered_text
-
-
-def caesar_decipher(message, shift_value):
-    '''
-    This function ciphers any submitted message using Caesar Cipher
-
-        Encryption mathematical representation:
-        caesar_cipher(x) = (x - n) mod 26
-        x: letter index     n: shift value
-
-        Parameters:
-        message
-        shift value
-
-        Returns:
-        ciphered text
-
+    Represents a class for the Caesar cipher
     '''
 
-    shift_value = int(shift_value)
 
-    check = True
-    while check:
-        if shift_value < 0:
-            print('Shift values should be positive. Try again.')
-            quit()
-        else:
-            check = False
-
-    message = message.lower()
-    ciphered_text = ''
-    #string_punctuation = string.punctuation
-
-    for char in message:
-        if char.isdigit():
-            ciphered_text = ciphered_text + char
-
-        elif char in string_punctuation:
-            ciphered_text = ciphered_text + char
+    def __init__(self, key):
+        self.key = key
 
 
-        elif char in english_alphabets:
-            ciphered_text = ciphered_text + (
-            english_alphabets[(english_alphabets.index(
-                char) - shift_value) % 26])
-        else:
-            ciphered_text = ciphered_text + ' '
+    def encryption(self, message):
 
-    #print(ciphered_text)
-    return ciphered_text
+        self.message = message
+        self.message = self.message.lower()
+        self.ciphered_text = ''
+
+        check = True
+        while check:
+            if self.key < 0:
+                print('Key must be positive. Try again')
+                quit()
+            else:
+                check = False
+
+        for char in self.message:
+            if char.isdigit():
+                self.ciphered_text += char
+            elif char in string_punctuation:
+                self.ciphered_text += char
+            elif char in english_alphabets:
+                self.ciphered_text += english_alphabets[(english_alphabets.index(char) +
+                                                    self.key) % 26]
+            else:
+                self.ciphered_text += ' '
+
+        print('Ciphered message:')
+        return self.ciphered_text
+
+
+
+    def decryption(self, encrypted_message):
+
+        self.encrypted_message = encrypted_message
+        self.deciphered_text = ''
+
+        check = True
+        while check:
+            if self.key < 0:
+                print('Key must be positive. Try again')
+                quit()
+            else:
+                check = False
+
+        for char in self.encrypted_message:
+            if char.isdigit():
+                self.deciphered_text += char
+            elif char in string_punctuation:
+                self.deciphered_text += char
+            elif char in english_alphabets:
+                self.deciphered_text += english_alphabets[
+                    (english_alphabets.index(char) -
+                     self.key) % 26]
+            else:
+                self.deciphered_text += ' '
+
+        print('Deciphered message: ')
+        return self.deciphered_text
 
 
 def vigenere_cipher(message,key):
@@ -298,6 +268,10 @@ def binary_decryption(encrypted_message):
             print('Error!')
 
     return decrypted_message
+
+
+
+
 
 
 def main():
