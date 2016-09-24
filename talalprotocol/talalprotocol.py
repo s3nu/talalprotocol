@@ -4,13 +4,12 @@
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 9/22/2016
+# Latest mod: 9/24/2016
 #
 # -----------------------------------------------------------------------------
 
 '''
 This module provides the following encryption functions:
-
 
 1. Vigenere Cipher
     function calls:
@@ -44,7 +43,7 @@ class CaesarCipher(object):
         self.key = key
 
 
-    def encryption(self, message):
+    def CaesarEncryption(self, message):
 
         self.message = message
         self.message = self.message.lower()
@@ -74,7 +73,7 @@ class CaesarCipher(object):
 
 
 
-    def decryption(self, encrypted_message):
+    def CaesarDecryption(self, encrypted_message):
 
         self.encrypted_message = encrypted_message
         self.deciphered_text = ''
@@ -207,7 +206,7 @@ def converting_to_binary(item1):
         item1 = int(item1) + 32
         binary_value = bin(item1)[2:].zfill(7)
     elif item1 in string_punctuation:
-        item1 = string_punctuation.index(item1) + 96
+        item1 = string_punctuation.index(item1) + 64
         binary_value = bin(item1)[2:].zfill(7)
     else:
         binary_value = bin(item1)[2:].zfill(7)
