@@ -65,7 +65,6 @@ def double_penetrate(username, password, command_option, carrier_option , phone_
         print('Failed to penetrate through phone or email\n')
         print('Please check input *args and *kwargs to DP function')
 
-double_penetrate('indianvip260', '1870house', 1, 7, '6504636049')
 def list_carriers():
     print("What is their carrier? \n"
           "1. Alltel \n"
@@ -80,4 +79,3 @@ def list_carriers():
           "Pass Number Into DP Function"
           " \n\r ")
 
-list_carriers()
