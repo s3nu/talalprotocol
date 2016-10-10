@@ -4,7 +4,7 @@
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 9/24/2016
+# Latest mod: 10/10/2016
 #
 # -----------------------------------------------------------------------------
 
@@ -12,23 +12,14 @@
 This module provides the following encryption functions:
 
 1. Vigenere Cipher
-    function calls:
-        a. vigenere_cipher(message, key)
-        b. vigenere_decipher(message, key)
-
 2. Caesar Cipher
-    function calls:
-        a. caesar_cipher(message, shift_value)
-        b. caesar_decipher(message, shift_value)
-
 3. Binary Encryption algorithm (custom)
-    function calls:
-        a. binary_encryption(message)
-        b. binary_decryption(encrypted_message)
 
+Notes:
+    a. fix binary decryption
 '''
 
-import string
+import string, os, sys
 x = string.ascii_lowercase
 english_alphabets = list(x)
 string_punctuation = string.punctuation
@@ -196,79 +187,144 @@ def vigenere_decipher(message, key):
     return decrypted_message
 
 
-def converting_to_binary(item1):
 
-    digit_list = list(string.digits)
-    string_punctuation = list(string.punctuation)
-
-    if item1 in digit_list:
-        # added 32 = 0100000 as a flag bit to indicate that a char is a digit
-        item1 = int(item1) + 32
-        binary_value = bin(item1)[2:].zfill(7)
-    elif item1 in string_punctuation:
-        item1 = string_punctuation.index(item1) + 64
-        binary_value = bin(item1)[2:].zfill(7)
-    else:
-        binary_value = bin(item1)[2:].zfill(7)
-
-    return binary_value
-
-
-def binary_encryption(message):
+class BinaryCipher(object):
     '''
-    This is a custom encryption algorithm and documentation is still private
+    Custom binary cipher
 
-    Parameter:
-    message
+    '''
+
+    def __init__(self, message = ''):
+        # self.message = message
+        # self.message = self.message.lower()
+        self.message = message
+        self.message = self.message.lower
+
+    def convert_to_binary(self, item1):
+
+        self.binary_value = 0
+        digit_list = list(string.digits)
+        string_punctuation = list(string.punctuation)
+
+        if item1 in digit_list:
+            # added 32 = 0100000 as a flag bit to indicate that a char is a digit
+            item1 = int(item1) + 32
+            self.binary_value = bin(item1)[2:].zfill(7)
+        elif item1 in string_punctuation:
+            item1 = string_punctuation.index(item1) + 64
+            self.binary_value = bin(item1)[2:].zfill(7)
+        else:
+            self.binary_value = bin(item1)[2:].zfill(7)
+
+        return self.binary_value
+
+
+    def BinaryEncryption(self, message):
+
+        self.message = message
+        self.message = self.message.lower()
+        self.encrypted_message = ''
+
+        for char in self.message:
+            if char.isdigit():
+                digit_in_binary = self.convert_to_binary(char)
+                self.encrypted_message += digit_in_binary
+            elif char in string_punctuation:
+                punc_in_binary = self.convert_to_binary(char)
+                self.encrypted_message += punc_in_binary
+            elif char in english_alphabets:
+                index = english_alphabets.index(char)
+                x = self.convert_to_binary(index)
+                self.encrypted_message += x
+            else:
+                self.encrypted_message += ' '
+
+            #self.encrypted_message += ' '
+
+        return self.encrypted_message
+
+        # Decryption logic needs modification
+        # def BinaryDecryption(self, encrypted_message):
+        #
+        #     self.encrypted_message = encrypted_message
+        #     self.decrypted_message = ''
+        #
+        #     chunks = self.encrypted_message.split(' ')
+        #     print(chunks)
+        #     chunks = [i.strip(' ') for i in chunks]
+        #     print(chunks)
+        #
+        #     for i in chunks:
+        #         flag = i[:2]
+        #         if flag == '00':
+        #             index = int(i[2:], 2)
+        #             self.decrypted_message += english_alphabets[index]
+        #         elif flag == '01':
+        #             digit = int(i[2:], 2)
+        #             digit = str(digit)
+        #             self.decrypted_message += digit
+        #         elif flag == '10':
+        #             punctuation_index = int(i[2:], 2)
+        #             self.decrypted_message += string_punctuation[punctuation_index]
+        #         else:
+        #             print('Wrong Input! There is an error! Try again!')
+        #             quit()
+        #
+        #     return self.decrypted_message
+
+
+def linear_search(item, list):
+    '''
+    This function is an implementation of a linear search algorithm
+
+    Parameters:
+    item, list
 
     Returns:
-    encrypted message
+    True/False depending if the item is found or not
     '''
+    found = False
+    position = 0
+    counter = 0
 
-    message = message.lower()
-    binary_ciphered_message = ''
-
-    for char in message:
-        if char.isdigit():
-            digit_in_binary = converting_to_binary(char)
-            binary_ciphered_message += digit_in_binary
-        elif char in string_punctuation:
-            punc_in_binary = converting_to_binary(char)
-            binary_ciphered_message += punc_in_binary
-        elif char in english_alphabets:
-            index = english_alphabets.index(char)
-            x = converting_to_binary(index)
-            binary_ciphered_message += x
+    while position < len(list) and not found:
+        if list[position] == item:
+            found = True
         else:
-            binary_ciphered_message += ' '
+            position += 1
+            counter +=1
+    print('Number of searches before finding the item: ' + str(counter))
+    return found
 
-    return binary_ciphered_message
+def binary_search(item, list):
+    '''
+    This function is an implementation of a binary search
 
+    Parameters:
+    item, list
 
+    Returns:
+    True or False depending if the item is found or not
+    '''
+    found = False
+    counter = 0
 
-def binary_decryption(encrypted_message):
+    bottom_of_list = 0
+    top_of_list = len(list) - 1
 
-    chunks = encrypted_message.split(' ')
-    decrypted_message = ''
-
-    for i in chunks:
-        flag = i[:2]
-        if flag == '00':
-            index = int(i[2:], 2)
-            decrypted_message += english_alphabets[index]
-        elif flag == '01':
-             digit = int(i[2:], 2)
-             digit = str(digit)
-             decrypted_message += digit
-        elif flag == '10':
-            punctuation_index = int(i[2:], 2)
-            decrypted_message += string_punctuation[punctuation_index]
+    while bottom_of_list <= top_of_list and not found:
+        middle_of_list = (bottom_of_list+top_of_list) // 2
+        if list[middle_of_list] == item:
+            found = True
+        elif item > list[middle_of_list]:
+            bottom_of_list = middle_of_list + 1
         else:
-            print('Error!')
+            # item is in the bottom half
+            top_of_list = middle_of_list - 1
+        counter += 1
+    print(' Number of searches before finding the item: ' + str(counter))
 
-    return decrypted_message
-
-
+    return found
 
 
 
