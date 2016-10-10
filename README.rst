@@ -13,7 +13,9 @@ Deep Layered Encryption and Security
 Features
 --------
 
-This module provides various encryption algorithms.
+This module provides various encryption algorithms and security exploits.
+
+All the exploits provided are meant for educational and research purposes only!
 
 Current ciphers:
 
