@@ -14,6 +14,7 @@ This module provides the following encryption functions:
 1. Vigenere Cipher
 2. Caesar Cipher
 3. Binary Encryption algorithm (custom)
+4. Linear and Binary search algorithms
 
 Notes:
     a. fix binary decryption
