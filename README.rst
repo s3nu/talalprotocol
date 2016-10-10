@@ -6,7 +6,7 @@ TalalProtocol_.
     .. _TalalProtocol: http://www.talalprotocol.com
 
 
-Deep Layered Encryption
+Deep Layered Encryption and Security
 
 .. figure:: docs/images/readme.jpg
 
@@ -22,6 +22,9 @@ a. Vigenere Cipher: encryption and decryption options.
 b. Caesar Cipher: encryption and decryption options.
 
 c. Custom Binary Encryption Algorithm: ENCRYPTION ONLY!
+
+d. Linear and Binary Search Algorithms.
+
 
 More features to be added within the next release cycle.
 
