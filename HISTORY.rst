@@ -24,5 +24,16 @@ History
 * Run time improvement
 
 
+0.2.1 (2016-10-10)
+------------------
+
+* Code improvements.
+
+* Minor Bug fixes.
+
+* Linear and Binary Search Algorithms added.
+
+* Text and Email Penetration Script added.
+
 
 
