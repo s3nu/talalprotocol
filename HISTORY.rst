@@ -41,5 +41,3 @@ History
 * Update for Python 3.6
 
 * End of Life Cycle for TalalProtocol
-
-*

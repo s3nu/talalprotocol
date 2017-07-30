@@ -29,7 +29,7 @@ d. Linear and Binary Search Algorithms.
 
 e. Text and Email Penetration Scripts.
 
-Features
+EOL
 --------
 
 End of Life Cycle
