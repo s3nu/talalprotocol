@@ -4,11 +4,11 @@
 #
 # Author: Talal Khalil
 # Start Date: 8/01/2016
-# Latest mod: 10/10/2016
+# Latest mod: 7/29/2017
 #
 # -----------------------------------------------------------------------------
 
-'''
+"""
 This module provides the following encryption functions:
 
 1. Vigenere Cipher
@@ -18,7 +18,7 @@ This module provides the following encryption functions:
 
 Notes:
     a. fix binary decryption
-'''
+"""
 
 import string, os, sys
 import smtplib as smt
@@ -27,15 +27,14 @@ x = string.ascii_lowercase
 english_alphabets = list(x)
 string_punctuation = string.punctuation
 
-class CaesarCipher(object):
-    '''
-    Represents a class for the Caesar cipher
-    '''
 
+class CaesarCipher(object):
+    """
+    Represents a class for the Caesar cipher
+    """
 
     def __init__(self, key):
         self.key = key
-
 
     def CaesarEncryption(self, message):
 
@@ -58,14 +57,12 @@ class CaesarCipher(object):
                 self.ciphered_text += char
             elif char in english_alphabets:
                 self.ciphered_text += english_alphabets[(english_alphabets.index(char) +
-                                                    self.key) % 26]
+                                                         self.key) % 26]
             else:
                 self.ciphered_text += ' '
 
         print('Ciphered message:')
         return self.ciphered_text
-
-
 
     def CaesarDecryption(self, encrypted_message):
 
@@ -96,8 +93,8 @@ class CaesarCipher(object):
         return self.deciphered_text
 
 
-def vigenere_cipher(message,key):
-    '''
+def vigenere_cipher(message, key):
+    """
     This function ciphers any submitted message using Vigenere Cipher
 
     Encryption mathematical representation:
@@ -110,7 +107,7 @@ def vigenere_cipher(message,key):
 
     Returns:
     ciphered text
-    '''
+    """
     message = message.lower()
     key = key.lower()
 
@@ -141,15 +138,16 @@ def vigenere_cipher(message,key):
             if new_index_value > 25:
                 new_index_value -= 26
             encrypted_message = encrypted_message + (
-            english_alphabets[new_index_value])
+                english_alphabets[new_index_value])
             key_pointer += 1
         else:
             encrypted_message = encrypted_message + ' '
 
     return encrypted_message
 
+
 def vigenere_decipher(message, key):
-    '''
+    """
     This function deciphers any vigenere_ciphered message
 
     Parameters:
@@ -158,7 +156,7 @@ def vigenere_decipher(message, key):
 
     Returns:
     deciphered message
-    '''
+    """
     key_length = 0
     key_list = []
 
@@ -190,14 +188,13 @@ def vigenere_decipher(message, key):
     return decrypted_message
 
 
-
 class BinaryCipher(object):
-    '''
+    """
     Custom binary cipher
 
-    '''
+    """
 
-    def __init__(self, message = ''):
+    def __init__(self, message=''):
         # self.message = message
         # self.message = self.message.lower()
         self.message = message
@@ -221,7 +218,6 @@ class BinaryCipher(object):
 
         return self.binary_value
 
-
     def BinaryEncryption(self, message):
 
         self.message = message
@@ -242,7 +238,7 @@ class BinaryCipher(object):
             else:
                 self.encrypted_message += ' '
 
-            #self.encrypted_message += ' '
+                # self.encrypted_message += ' '
 
         return self.encrypted_message
 
@@ -277,7 +273,7 @@ class BinaryCipher(object):
 
 
 def linear_search(item, list):
-    '''
+    """
     This function is an implementation of a linear search algorithm
 
     Parameters:
@@ -285,7 +281,7 @@ def linear_search(item, list):
 
     Returns:
     True/False depending if the item is found or not
-    '''
+    """
     found = False
     position = 0
     counter = 0
@@ -295,12 +291,13 @@ def linear_search(item, list):
             found = True
         else:
             position += 1
-            counter +=1
+            counter += 1
     print('Number of searches before finding the item: ' + str(counter))
     return found
 
+
 def binary_search(item, list):
-    '''
+    """
     This function is an implementation of a binary search
 
     Parameters:
@@ -308,7 +305,7 @@ def binary_search(item, list):
 
     Returns:
     True or False depending if the item is found or not
-    '''
+    """
     found = False
     counter = 0
 
@@ -316,7 +313,7 @@ def binary_search(item, list):
     top_of_list = len(list) - 1
 
     while bottom_of_list <= top_of_list and not found:
-        middle_of_list = (bottom_of_list+top_of_list) // 2
+        middle_of_list = (bottom_of_list + top_of_list) // 2
         if list[middle_of_list] == item:
             found = True
         elif item > list[middle_of_list]:
@@ -330,7 +327,7 @@ def binary_search(item, list):
     return found
 
 
-def double_penetrate(username, password, command_option, carrier_option , phone_number=None,email_address=None):
+def double_penetrate(username, password, command_option, carrier_option, phone_number=None, email_address=None):
     """
     FOR RESEARCH AND OR TEAM STANDY USE ONLY - You are Warned
     username: Gmail Username
@@ -379,7 +376,7 @@ def double_penetrate(username, password, command_option, carrier_option , phone_
 
         while 1:
             obj.sendmail(username, v_phone, phone_message)
-            print ("Penetrating -> Control-C to SIGKILL")
+            print("Penetrating -> Control-C to SIGKILL")
 
     elif option == 2 and email_address != None:
         v_email = email_address
@@ -389,10 +386,11 @@ def double_penetrate(username, password, command_option, carrier_option , phone_
 
         while 1:
             obj.sendmail(username, v_email, email_message)
-            print ("Penetrating -> Control-C to SIGKILL")
+            print("Penetrating -> Control-C to SIGKILL")
     else:
         print('Failed to penetrate through phone or email\n')
         print('Please check input *args and *kwargs to DP function')
+
 
 def list_carriers():
     print("What is their carrier? \n"
@@ -407,7 +405,6 @@ def list_carriers():
           "9. Orange \n"
           "Pass Number Into DP Function"
           " \n\r ")
-
 
 
 def main():

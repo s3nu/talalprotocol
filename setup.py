@@ -10,18 +10,18 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    # TODO: put package requirements here
-    'wheel==0.29',
-    'pip==8.1.2',
+    'wheel==0.29.0',
+    'pip==9.0.1',
 ]
 
 test_requirements = [
-    # TODO: put package test requirements here
+    'tox==2.7.0',
+    'flake8==3.4.1',
 ]
 
 setup(
     name='talalprotocol',
-    version='0.2.1',
+    version='0.3',
     description="Deep Layered Encryption",
     long_description=readme + '\n\n' + history,
     author="Team Standy",
@@ -46,7 +46,6 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ]
-    #test_suite='tests',
-    #tests_require=test_requirements
 )

@@ -29,8 +29,11 @@ d. Linear and Binary Search Algorithms.
 
 e. Text and Email Penetration Scripts.
 
+EOL
+--------
 
-More features to be added within the next release cycle.
+End of Life Cycle
+Goodnight, Sweet Prince
 
 Credits
 ---------

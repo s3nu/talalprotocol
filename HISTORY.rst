@@ -36,4 +36,8 @@ History
 * Text and Email Penetration Script added.
 
 
+0.3 (2017-7-29)
+------------------
+* Update for Python 3.6
 
+* End of Life Cycle for TalalProtocol
