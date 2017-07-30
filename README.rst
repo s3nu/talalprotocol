@@ -15,7 +15,7 @@ Features
 
 This module provides various encryption algorithms and security exploits.
 
-All the exploits provided are meant for educational and research purposes only!
+All the scripts provided are meant for educational and research purposes only!
 
 Current ciphers:
 
@@ -26,6 +26,8 @@ b. Caesar Cipher: encryption and decryption options.
 c. Custom Binary Encryption Algorithm: ENCRYPTION ONLY!
 
 d. Linear and Binary Search Algorithms.
+
+e. Text and Email Penetration Scripts.
 
 
 More features to be added within the next release cycle.
