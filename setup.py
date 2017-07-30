@@ -21,7 +21,7 @@ test_requirements = [
 
 setup(
     name='talalprotocol',
-    version='0.3',
+    version='0.2.1',
     description="Deep Layered Encryption",
     long_description=readme + '\n\n' + history,
     author="Team Standy",
