@@ -11,7 +11,7 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'wheel==0.29.0',
-    'pip==9.0.1',
+    'pip==19.2',
 ]
 
 test_requirements = [
