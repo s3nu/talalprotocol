@@ -10,7 +10,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'wheel==0.29.0',
+    'wheel==0.38.1',
     'pip==9.0.1',
 ]
 
